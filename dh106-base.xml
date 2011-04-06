@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
+
+    <fuel-fraction>1.0</fuel-fraction>
+
+    <startup>
+      <splash-texture>Aircraft/DH-106/dh106-splash.png</splash-texture>
+    </startup>
+
+    <sound>
+      <path archive="y">Aircraft/DH-106/Sounds/dh106-sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/DH-106/Models/dh106.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic>
+        <int type="int" n="0">0</int>
+        <int type="int" n="1">0</int>
+        <int type="int" n="2">0</int>
+        <int type="int" n="3">0</int>
+        <int type="int" n="4">0</int>
+        <int type="int" n="5">0</int>
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+      </generic>
+    </multiplay>
+
+    <help>
+      <title>dh106</title>
+      <key>
+        <name>d</name>
+        <desc>Open/Close door</desc>
+      </key>
+    </help>
+
+    <menubar include="Dialogs/dh106-menu.xml"/>
+
+  </sim>
+ 
+  <input>
+    <keyboard include="Nasal/dh106-keyboard.xml"/>
+  </input>
+ 
+  <nasal>
+    <doors>
+      <file>Aircraft/DH-106/Nasal/doors.nas</file>
+    </doors>
+    <dh106>
+      <file>Aircraft/DH-106/Nasal/light.nas</file>
+      <file>Aircraft/DH-106/Nasal/liveries.nas</file>
+<!--  <file>Aircraft/DH-106/Nasal/immat.nas</file> -->
+    </dh106>
+  </nasal>
+   
+</PropertyList>
