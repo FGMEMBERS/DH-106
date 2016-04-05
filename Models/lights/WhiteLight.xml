@@ -2,7 +2,7 @@
 
 <PropertyList>
 
-  <path>GreenLight.ac</path>
+  <path>WhiteLight.ac</path>
 
   <animation>
     <object-name>Light</object-name>
@@ -28,9 +28,9 @@
     <type>material</type>
     <object-name>Light</object-name>
     <emission>
-      <red>   0 </red>
+      <red>   2 </red>
       <green> 2 </green>
-      <blue>  0 </blue>
+      <blue>  2 </blue>
     </emission>
   </animation>
   
