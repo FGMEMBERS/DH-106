@@ -1,9 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
   <path>dh106.ac</path>
 
+  <!-- MP sound call -->
+  <sound>
+    <path>Aircraft/DH-106/Sounds/mp-sound.xml</path>
+  </sound>
+  
   <nasal>
     <load>
       var livery_update = aircraft.livery_update.new("Aircraft/DH-106/Models/Liveries", 10);
@@ -98,50 +103,15 @@
     <object-name>axeD</object-name>
     <object-name>roueD1</object-name>
     <object-name>roueD2</object-name>
+    
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-<!--
-    <diffuse>
-      <red-prop>diffuse/red</red-prop>
-      <green-prop>diffuse/green</green-prop>
-      <blue-prop>diffuse/blue</blue-prop>
-    </diffuse>
-
-    <ambient>
-      <red-prop>ambient/red</red-prop>
-      <green-prop>ambient/green</green-prop>
-      <blue-prop>ambient/blue</blue-prop>
-    </ambient>
--->
     <specular>
       <red-prop>specular/red</red-prop>
       <green-prop>specular/green</green-prop>
       <blue-prop>specular/blue</blue-prop>
     </specular>
-
-    <emission>
-      <red-prop>emission/red</red-prop>
-      <green-prop>emission/green</green-prop>
-      <blue-prop>emission/blue</blue-prop>
-    </emission>
-<!--
-    <shininess>
-      <shininess-prop>shininess</shininess-prop>
-    </shininess>
--->
-  </animation>
-
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>vitres</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
-    <object-name>vitres</object-name>
   </animation>
 
   <effect>
@@ -169,20 +139,30 @@
     <object-name>ajouts</object-name>
   </effect>
 
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/DH-106/Models/Effects/Glass/glass</inherits-from>
+    <object-name>vitres</object-name>
+  </effect>
+  
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>vitres</object-name>
+  </effect>
+  
   <!-- Une ombre pour OSG -->
   <model>
-    <name>shadowOSG</name>
     <path>Aircraft/DH-106/Models/shadow.xml</path>
+    <offsets>
+      <x-m>  0 </x-m>
+      <y-m>  0 </y-m>
+      <z-m> -4 </z-m>
+    </offsets>
   </model>
 
   <!-- Interieur -->
   <model>
     <path>Aircraft/DH-106/Models/Interior/interior.xml</path>
-    <offsets>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-    </offsets>
   </model>
 
   <!-- Effets sur le sol -->
@@ -218,68 +198,75 @@
 
   <!-- Flamme -->
   <model>
-    <path>Aircraft/DH-106/Models/Effects/flammes/flamme.xml</path>
+    <path>Aircraft/DH-106/Models/Effects/flammes/flammesGE.xml</path>
     <offsets>
       <x-m>  4.497 </x-m>
       <y-m> -3.861 </y-m>
       <z-m> -2.388 </z-m>
-      <roll-deg>     0 </roll-deg>
-      <pitch-deg>    0 </pitch-deg>
       <heading-deg> -5 </heading-deg>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/DH-106/Models/Effects/flammes/flamme.xml</path>
+    <path>Aircraft/DH-106/Models/Effects/flammes/flammesGI.xml</path>
     <offsets>
       <x-m>  3.818 </x-m>
       <y-m> -2.850 </y-m>
       <z-m> -2.388 </z-m>
-      <roll-deg>     0 </roll-deg>
-      <pitch-deg>    0 </pitch-deg>
       <heading-deg> -5 </heading-deg>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/DH-106/Models/Effects/flammes/flamme.xml</path>
+    <path>Aircraft/DH-106/Models/Effects/flammes/flammesDI.xml</path>
     <offsets>
       <x-m>  3.818 </x-m>
       <y-m>  2.850 </y-m>
       <z-m> -2.388 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
       <heading-deg> 5 </heading-deg>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/DH-106/Models/Effects/flammes/flamme.xml</path>
+    <path>Aircraft/DH-106/Models/Effects/flammes/flammesDE.xml</path>
     <offsets>
       <x-m>  4.497 </x-m>
       <y-m>  3.861 </y-m>
       <z-m> -2.388 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
       <heading-deg> 5 </heading-deg>
     </offsets>
   </model>
 
   <!-- Particules OSG -->
   <model>
-    <path>Aircraft/DH-106/Models/Effects/trail/trail.xml</path>
+    <path>Aircraft/DH-106/Models/Effects/smoke/smokeGE.xml</path>
     <offsets>
       <x-m>  4.497 </x-m>
       <y-m> -3.861 </y-m>
       <z-m> -2.388 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/DH-106/Models/Effects/trail/trailGE.xml</path>
+    <offsets>
+      <x-m>  4.497 </x-m>
+      <y-m> -3.861 </y-m>
+      <z-m> -2.388 </z-m>
     </offsets>
   </model>
 
   <model>
-    <path>Aircraft/DH-106/Models/Effects/trail/trail.xml</path>
+    <path>Aircraft/DH-106/Models/Effects/smoke/smokeGI.xml</path>
+    <offsets>
+      <x-m>  3.818 </x-m>
+      <y-m> -2.850 </y-m>
+      <z-m> -2.388 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/DH-106/Models/Effects/trail/trailGI.xml</path>
     <offsets>
       <x-m>  3.818 </x-m>
       <y-m> -2.850 </y-m>
@@ -288,7 +275,16 @@
   </model>
 
   <model>
-    <path>Aircraft/DH-106/Models/Effects/trail/trail.xml</path>
+    <path>Aircraft/DH-106/Models/Effects/smoke/smokeDI.xml</path>
+    <offsets>
+      <x-m>  3.818 </x-m>
+      <y-m>  2.850 </y-m>
+      <z-m> -2.388 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/DH-106/Models/Effects/trail/trailDI.xml</path>
     <offsets>
       <x-m>  3.818 </x-m>
       <y-m>  2.850 </y-m>
@@ -297,43 +293,16 @@
   </model>
 
   <model>
-    <path>Aircraft/DH-106/Models/Effects/trail/trail.xml</path>
+    <path>Aircraft/DH-106/Models/Effects/smoke/smokeDE.xml</path>
     <offsets>
       <x-m>  4.497 </x-m>
       <y-m>  3.861 </y-m>
       <z-m> -2.388 </z-m>
     </offsets>
   </model>
-
+  
   <model>
-    <path>Aircraft/DH-106/Models/Effects/smoke/smoke.xml</path>
-    <offsets>
-      <x-m>  4.497 </x-m>
-      <y-m> -3.861 </y-m>
-      <z-m> -2.388 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/DH-106/Models/Effects/smoke/smoke.xml</path>
-    <offsets>
-      <x-m>  3.818 </x-m>
-      <y-m> -2.850 </y-m>
-      <z-m> -2.388 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/DH-106/Models/Effects/smoke/smoke.xml</path>
-    <offsets>
-      <x-m>  3.818 </x-m>
-      <y-m>  2.850 </y-m>
-      <z-m> -2.388 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/DH-106/Models/Effects/smoke/smoke.xml</path>
+    <path>Aircraft/DH-106/Models/Effects/trail/trailDE.xml</path>
     <offsets>
       <x-m>  4.497 </x-m>
       <y-m>  3.861 </y-m>
@@ -400,7 +369,7 @@
     <type>rotate</type>
     <object-name>direction</object-name>
     <property>surface-positions/rudder-pos-norm</property>
-    <factor> 20 </factor>
+    <factor> 15 </factor>
     <axis>
       <x1-m> 14.185 </x1-m>
       <y1-m>  0.000 </y1-m>
@@ -416,7 +385,7 @@
     <type>rotate</type>
     <object-name>profondeurG</object-name>
     <property>surface-positions/elevator-pos-norm</property>
-    <factor> 20 </factor>
+    <factor> 15 </factor>
     <axis>
       <x1-m> 14.477 </x1-m>
       <y1-m> -6.882 </y1-m>
@@ -431,7 +400,7 @@
     <type>rotate</type>
     <object-name>profondeurD</object-name>
     <property>surface-positions/elevator-pos-norm</property>
-    <factor> 20 </factor>
+    <factor> 15 </factor>
     <axis>
       <x1-m> 14.416 </x1-m>
       <y1-m>  0.572 </y1-m>
@@ -840,5 +809,59 @@
     </axis>
   </animation>
 
+  <!-- Ajout des effets lumineux -->
+  <model>
+    <path>Aircraft/DH-106/Models/lights/beacon.xml</path>
+    <offsets>
+      <x-m> 13.83772 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m>  4.51808 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/DH-106/Models/lights/beacon.xml</path>
+    <offsets>
+      <x-m> -12.47557 </x-m>
+      <y-m>   0.00000 </y-m>
+      <z-m>  -2.75303 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/DH-106/Models/lights/RedLight.xml</path>
+    <offsets>
+      <x-m>   2.53303 </x-m>
+      <y-m> -17.43982 </y-m>
+      <z-m>  -1.75931 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/DH-106/Models/lights/StrobeLight.xml</path>
+    <offsets>
+      <x-m>   2.63303 </x-m>
+      <y-m> -17.43982 </y-m>
+      <z-m>  -1.75931 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/DH-106/Models/lights/GreenLight.xml</path>
+    <offsets>
+      <x-m>  2.53303 </x-m>
+      <y-m> 17.43982 </y-m>
+      <z-m> -1.75931 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/DH-106/Models/lights/StrobeLight.xml</path>
+    <offsets>
+      <x-m>  2.63303 </x-m>
+      <y-m> 17.43982 </y-m>
+      <z-m> -1.75931 </z-m>
+    </offsets>
+  </model>
+  
 </PropertyList>
-

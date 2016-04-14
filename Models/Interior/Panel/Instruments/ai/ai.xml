@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -16,27 +16,21 @@
     <object-name>LOC.needle</object-name>
     <object-name>turn.needle</object-name>
     <object-name>AI.slipball</object-name>
-    <object-name>Circle.016</object-name>
-    <object-name>Cylinder.001</object-name>
-    <object-name>Plane.110</object-name>
-    <object-name>Plane.111</object-name>
-    <object-name>Plane.109</object-name>
+    <object-name>AI.fond</object-name>
+    <object-name>button</object-name>
+    <object-name>gradation</object-name>
+    <object-name>aircraft</object-name>
+    <object-name>AI.fond2</object-name>
 
     <object-name>vitre</object-name>
   </animation>
 
-  <animation>
-    <type>noshadow</type>
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/DH-106/Models/Effects/Glass/glass</inherits-from>
     <object-name>vitre</object-name>
-  </animation>
-
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>vitre</object-name>
-  </animation>
-
+  </effect>
+  
   <animation>
     <type>material</type>
     <object-name>AI.face</object-name>
@@ -49,11 +43,15 @@
     <object-name>LOC.needle</object-name>
     <object-name>turn.needle</object-name>
     <object-name>AI.slipball</object-name>
+    <object-name>AI.fond</object-name>
+    <object-name>gradation</object-name>
+    <object-name>aircraft</object-name>
+    <object-name>AI.fond2</object-name>
     <emission>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
       <red>   0.50 </red>
       <green> 0.25 </green>
       <blue>  0.25 </blue>
-      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
     </emission>
   </animation>
 
@@ -205,4 +203,3 @@
   </animation>
 
 </PropertyList>
-

@@ -1,12 +1,22 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
-<!-- <PropertyList include="dh106-jsbsim-cnf.xml"> -->
-<PropertyList include="dh106-yasim-cnf.xml">
+<PropertyList include="Systems/dh106-base.xml">
 
   <sim>
-    <description>de Havilland DH 106 Comet 4</description>
+    
+    <description>de Havilland DH 106 Comet 4 (YASim)</description>
     <author>Emmanuel BARANGER (3D/FDM)</author>
+    
+    <flight-model archive="y">yasim</flight-model>
+    <aero archive="y">Systems/dh106-yasim</aero>
+    
+    <rating>
+      <FDM type="int">     2 </FDM>
+      <systems type="int"> 1 </systems>
+      <cockpit type="int"> 2 </cockpit>
+      <model type="int">   4 </model>
+    </rating>
+    
   </sim>
 
 </PropertyList>
-
