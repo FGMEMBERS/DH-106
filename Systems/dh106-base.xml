@@ -2,7 +2,7 @@
 
 <PropertyList>
 
-  <sim include="Systems/views.xml">
+  <sim include="views.xml">
 
     <fuel-fraction>1.0</fuel-fraction>
 
@@ -58,15 +58,15 @@
       </generic>
     </multiplay>
     
-    <help include="Systems/help.xml"/>
+    <help include="help.xml"/>
 
-    <menubar include="Dialogs/dh106-menu.xml"/>
+    <menubar include="../Dialogs/dh106-menu.xml"/>
 
   </sim>
  
-  <input include="Systems/dh106-keyboard.xml"/>
+  <input include="dh106-keyboard.xml"/>
   
-  <controls include="Systems/controls.xml"/>
+  <controls include="controls.xml"/>
   
   <nasal>
     <doors>
