@@ -16,6 +16,18 @@
       <cockpit type="int"> 2 </cockpit>
       <model type="int">   4 </model>
     </rating>
+
+    <tags>
+      <tag>transport</tag>
+      <tag>1950s</tag> <!-- first delivery 1958 -->
+      <tag>1960s</tag>
+      <tag>1970s</tag>
+      <tag>1980s</tag> <!-- retired november 1980 by Dan Air -->
+      <tag>ifr</tag>   <!-- but we'd need a decent cockpit for this -->
+      <tag>retractable-gear</tag>
+      <tag>tricycle</tag>
+      <tag>jet</tag>
+    </tags>
     
   </sim>
 
